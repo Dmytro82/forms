@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-ua">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+    rel="stylesheet">
+  <title>forms</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
+  <link rel="stylesheet" href="./css/test.css">
+</head>
+
+<body>
+  <div class="container">
+    <p>
+      Атрибут /<b>required</b> позначає поле форми як обов'язкове для заповнення <br>
+      Атрибути /<b>minlength</b> і /<b>maxlength</b> накладають обмеження на кількість символів,
+    </p>
+    <p>Атрибути /<b>min</b> і /<b>max</b> дозволяють перевірити входження чисельного значення у вказаний діапазон.
+      Можуть
+      використовуватися тільки в полях з типом number, range або date.
+    </p>
+    <p>
+      Атрибут /<b>pattern</b> дозволяє вказати регулярний вираз (шаблон), щодо якого буде перевірятися значення поля.
+    </p>
+    <p>Псевдокласи стану - модуль 6 заняття 12</p>
+  </div>
+
+  <!-- main -->
+  <main>
+    <section class="section">
+
+      <!-- -------------------forms---------- -->
+      <div class="container container-form">
+
+        <!-- -------------------input type="text"--------- -->
+        <form>
+          <label class="typeText">
+            First name
+            <input type="text" name="firstName" autofocus placeholder="Jacob" />
+          </label>
+          <label class="typeText">
+            Last name
+            <input type="text" name="lastName" />
+          </label>
+          <button type="submit" class="button primary">Submit</button>
+        </form>
+
+        <form>
+          <label class="typeText">
+            Email
+            <input type="email" name="email" />
+          </label>
+          <label class="typeText">
+            Password
+            <input type="password" name="pwd" minlength="5" maxlength="12" />
+          </label>
+          <label class="typeText">
+            Phone number
+            <input type="tel" name="phone" />
+          </label>
+          <button type="submit" class="button primary">Register</button>
+        </form>
+
+        <!-- -------------------input type="radio"--------- -->
+        <form>
+          <p>Choose a color:</p>
+          <label>
+            <input type="radio" name="color" value="red" />
+            Red
+          </label>
+          <label>
+            <input type="radio" name="color" value="white" checked />
+            White
+          </label>
+          <label>
+            <input type="radio" name="color" value="green" />
+            Green
+          </label>
+
+          <p>Select size:</p>
+          <label>
+            <input type="radio" name="size" value="sm" />
+            Small
+          </label>
+          <label>
+            <input type="radio" name="size" value="md" />
+            Medium
+          </label>
+          <label>
+            <input type="radio" name="size" value="lg" checked />
+            Large
+          </label>
+        </form>
+        <!-- -------------------input type="checkbox"--------- -->
+        <form>
+          <p>What are your hobbies?</p>
+          <label>
+            <input type="checkbox" name="hobby" value="music" checked />
+            Music
+          </label>
+          <label>
+            <input type="checkbox" name="hobby" value="sports" checked />
+            Sports
+          </label>
+          <label>
+            <input type="checkbox" name="hobby" value="reading" />
+            Reading
+          </label>
+        </form>
+        <!-- -------------------input type="number"--------- -->
+        <form>
+          <label class="typeText">
+            Weight with 0.5 step value:
+            <input type="number" name="weight" min="0" max="200" step="0.5" value="0" />
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+        <!-- -------------------input type="range" повзунки--------- -->
+        <form>
+          <label>
+            Interest rate:
+            <input type="range" name="interest_rate" value="40" min="0" max="100" step="5" />
+          </label>
+
+          <p>Selected value: <span class="js-selected-value">40</span></p>
+        </form>
+
+        <!-- ------------------date time--------- -->
+        <form>
+          <label class="typeText">
+            Date
+            <input type="date" />
+          </label>
+
+          <label class="typeText">
+            Time
+            <input type="time" />
+          </label>
+
+          <label class="typeText">
+            Date and time
+            <input type="datetime-local" />
+          </label>
+        </form>
+
+        <!-- -----------------textarea--------- -->
+        <form class="typeText">
+          <label class="typeText">
+            Username
+            <input type="text" name="username" placeholder="Jack Meadows">
+          </label>
+          <label class="typeText">
+            Feedback
+            <textarea name="feedback" rows="5" placeholder="Enter your message here..."></textarea>
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+
+        <!-- -----------------select--------- -->
+        <form action="">
+          <label for="size">Size</label>
+          <select id="size" name="size">
+            <option value="xs">Extra Small</option>
+            <option value="s">Small</option>
+            <option value="m" selected>Medium</option>
+            <option value="l">Large</option>
+          </select>
+        </form>
+
+        <form action="">
+          <label for="month">Month</label>
+          <select name="month" id="month">
+            <optgroup label="Summer">
+              <option value="s6">June</option>
+              <option value="s7">July</option>
+              <option value="s8">August</option>
+            </optgroup>
+
+            <optgroup label="Autumn">
+              <option value="s9">September</option>
+              <option value="s10">October</option>
+              <option value="s11">November</option>
+            </optgroup>
+          </select>
+        </form>
+
+        <!-- -----------------datalist--------- -->
+
+        <form action="" class="typeText">
+          <label for="fav">Choose your favourite browser</label>
+          <input list="browsers" name="fav" id="fav" />
+
+          <datalist id="browsers">
+            <option>Edge</option>
+            <option>Firefox</option>
+            <option>Chrome</option>
+            <option>Opera</option>
+            <option>Safari</option>
+          </datalist>
+        </form>
+
+        <form action="">
+          <label for="state">Choose your state</label>
+          <input type="text" name="state" id="state" list="states" />
+          <datalist id="states">
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+          </datalist>
+        </form>
+
+      </div>
+
+      <!-- --------------Елементи <fieldset> і <legend>--------- -->
+
+      <div class="container">
+        <form class="form">
+          <fieldset class="form-group">
+            <legend class="group-title">Enter your contact details</legend>
+            <label class="form-label">
+              Name
+              <input type="text" name="username" />
+            </label>
+            <label class="form-label">
+              Email
+              <input type="email" name="email" />
+            </label>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend class="group-title">Your favourite programming language</legend>
+            <div class="form-field">
+              <input type="checkbox" name="language" value="python" id="python">
+              <label class="form-label" for="python">Python</label>
+            </div>
+            <div class="form-field">
+              <input type="checkbox" name="language" value="js" id="js">
+              <label class="form-label" for="js">JavaScript</label>
+            </div>
+            <div class="form-field">
+              <input type="checkbox" name="language" value="ruby" id="ruby">
+              <label class="form-label" for="ruby">Python</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend class="group-title">I want to receive</legend>
+            <div class="form-field">
+              <input type="checkbox" name="newsletter" value="weekly" id="weekly">
+              <label class="form-label" for="weekly">The weekly newsletter</label>
+            </div>
+            <div class="form-field">
+              <input type="checkbox" name="newsletter" value="offers" id="offers">
+              <label class="form-label" for="offers">Offers from the company</label>
+            </div>
+            <div class="form-field">
+              <input type="checkbox" name="newsletter" value="associated_offers" id="associated_offers">
+              <label class="form-label" for="associated_offers">Offers from associated companies</label>
+            </div>
+          </fieldset>
+
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- -------------Групування з можливістю оформлення--------- -->
+
+      <div class="container">
+        <p>
+          Елементи /fieldset і /legend мають відмінну семантику, але обмежені можливості оформлення. Здебільшого для
+          групування елементів форми використовується div з атрибутами доступності role і aria-labelledby.
+          Атрибут role="group" вказує на те, що елементи всередині цього /div є частиною групи.
+          Атрибут aria-labelledby="contact-details-head" містить ідентифікатор елемента з описом групи.
+          /div role="group" aria-labelledby="contact-details-head">
+          /p id="contact-details-head">Enter your contact details /p
+          Related elements
+          /div
+        </p>
+        <form class="form">
+          <div class="form-group" role="group" aria-labelledby="contact-details-head">
+            <p id="contact-details-head">Enter your contact details</p>
+            <label>
+              Name
+              <input type="text" name="username" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" />
+            </label>
+          </div>
+
+          <div class="form-group" role="group" aria-labelledby="language-head">
+            <p id="language-head">Your favourite programming language</p>
+            <label>
+              <input type="checkbox" name="language" value="python">
+              Python
+            </label>
+            <label>
+              <input type="checkbox" name="language" value="js">
+              JavaScript
+            </label>
+            <label>
+              <input type="checkbox" name="language" value="ruby">
+              Ruby
+            </label>
+          </div>
+
+          <div class="form-group" role="group" aria-labelledby="newsletter-head">
+            <p id="newsletter-head">I want to receive</p>
+            <label>
+              <input type="checkbox" name="newsletter" value="weekly">
+              The weekly newsletter
+            </label>
+            <label>
+              <input type="checkbox" name="newsletter" value="company_offers">
+              Offers from the company
+            </label>
+            <label>
+              <input type="checkbox" name="newsletter" value="associated_offers">
+              Offers from associated companies
+            </label>
+          </div>
+
+          <button type="submit">Subscribe</button>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/range.js"></script>
+</body>
+
+</html>

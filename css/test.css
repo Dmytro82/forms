@@ -1,0 +1,159 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  color: black;
+
+  /* margin: 0; */
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  outline: 0px;
+}
+
+img {
+  display: block;
+  min-width: 100%;
+  height: auto;
+}
+
+svg {
+  fill: currentColor;
+}
+
+address {
+  font-style: normal;
+}
+
+/* ---------------visually-hidden ------ */
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+/*  --------------  button-----------------*/
+.button {
+  display: inline-block;
+  border: 0;
+  border-radius: 4px;
+  padding: 10px 32px;
+
+  /* font-family: inherit; */
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  letter-spacing: 0.06em;
+  text-align: center;
+
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.button.primary {
+  background-color: green;
+  color: white;
+  transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1), background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button.primary:hover,
+.button.primary:focus {
+  background-color: white;
+  color: green;
+}
+
+/* -------section, container-----------*/
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.section-title {
+  margin-bottom: 50px;
+  /* font-weight: 700; */
+  font-size: 36px;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-align: center;
+
+  color: black;
+}
+
+.container {
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  outline: 2px solid red;
+}
+
+/* --------------test input */
+
+.container-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+}
+
+.typeText {
+  display: flex;
+  flex-direction: column;
+}
+
+
+input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+form {
+  flex-basis: calc((100% - 3*15px) / 4);
+  ;
+  min-height: 270px;
+  padding: 30px;
+  outline: 1px solid green;
+
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.form-group p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
