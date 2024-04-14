@@ -26,6 +26,8 @@
     <p>
       Атрибут /<b>pattern</b> дозволяє вказати регулярний вираз (шаблон), щодо якого буде перевірятися значення поля.
     </p>
+    <p><b>autocomplete</b>="on"- спецификация, загуглить, можно всей форме или точечно</p>
+    <p><b>autofocus</b></p>
     <p>Псевдокласи стану - модуль 6 заняття 12</p>
   </div>
 
@@ -37,7 +39,7 @@
       <div class="container container-form">
 
         <!-- -------------------input type="text"--------- -->
-        <form>
+        <form class="" autocomplete="on">
           <label class="typeText">
             First name
             <input type="text" name="firstName" autofocus placeholder="Jacob" />
@@ -96,7 +98,7 @@
           </label>
         </form>
         <!-- -------------------input type="checkbox"--------- -->
-        <form>
+        <form class="js-speaker-form">
           <p>What are your hobbies?</p>
           <label>
             <input type="checkbox" name="hobby" value="music" checked />
@@ -110,6 +112,7 @@
             <input type="checkbox" name="hobby" value="reading" />
             Reading
           </label>
+          <button type="submit" class="button primary">Register</button>
         </form>
         <!-- -------------------input type="number"--------- -->
         <form>
@@ -334,6 +337,17 @@
   </main>
 
   <script src="./js/range.js"></script>
+  <script>
+    (() => {
+      document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+        e.preventDefault();
+
+        new FormData(e.currentTarget).forEach((value, name) =>
+          console.log(`${name}: ${value}`),
+        );
+      });
+    })();
+  </script>
 </body>
 
 </html>

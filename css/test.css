@@ -58,6 +58,7 @@ address {
 .button {
   display: inline-block;
   border: 0;
+
   border-radius: 4px;
   padding: 10px 32px;
 
@@ -135,7 +136,6 @@ input {
 
 form {
   flex-basis: calc((100% - 3*15px) / 4);
-  ;
   min-height: 270px;
   padding: 30px;
   outline: 1px solid green;
